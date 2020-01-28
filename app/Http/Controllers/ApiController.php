@@ -15,4 +15,16 @@ class ApiController extends Controller
             'data' => 'Hello World'
         ]);
     }
+
+    public function UserAgent(Request $request)
+    {
+        return response()->json([
+            'ret'=> 200,
+            'desc'=> 'success',
+            'data'=> [
+                "ip"=> $request->ip(),
+                "ua"=> $request->header('User-Agent')
+            ]
+        ]);       
+    }
 }
