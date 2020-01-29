@@ -14,9 +14,11 @@ use Illuminate\Http\Request;
 */
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
-    //return $request->user();
+   // return $request->user();
 //});
 
 // API - 例 的路由部分
-Route::post('/home', 'HomeController@index');
+Route::post('/hello', 'ApiController@hello');
+
+Route::post('/home', 'apIIIController@home');
 
