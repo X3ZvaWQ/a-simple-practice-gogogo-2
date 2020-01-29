@@ -11,3 +11,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
+public function index(Request $request) {
+    return response()->view('web_qq');
+}
+?>
