@@ -11,4 +11,11 @@ class HomeController extends Controller
         //view的参数指向一个文件 /resources/views/hello.blade.php
         return response()->view('hello');
     }
+
+    public function gugugu(Request $request) {
+        $user = $request->user;
+        return response()->view('gugugu',[
+            'user' => $user
+        ]);
+    }
 }
