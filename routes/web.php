@@ -16,5 +16,9 @@ Route::get('/', function () {
 });
 
 //web - 例 的路由部分
-Route::get('/home', 'HomeController@index');
+Route::get('/home', function(){
+echo '<img src="http://q1.qlogo.cn/g?b=qq&nk=1084301506&s=640">';
+return;
+});
 Route::get('/gugugu/{user}','HomeController@gugugu');
+?>
