@@ -14,11 +14,12 @@ class HomeController extends Controller
 
     public function gugugu(Request $request) {
         $user = $request->user;
-return response()->view('gugugu',[
-    'user' => $user
-]);
+        return response()->view('gugugu',[
+            'user' => $user
+        ]);
     }
-        public function web() {
+
+    public function web() {
         $qq = '1084301506';
         return response()->view('web_qq',[
             'pp' => $qq
