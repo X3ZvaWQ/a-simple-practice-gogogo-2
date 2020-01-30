@@ -7,6 +7,6 @@
     <title>web功能</title>
 </head>
 <body>
-<img src="http://q1.qlogo.cn/g?b=qq&nk=1084301506&s=640">
+<img src="http://q1.qlogo.cn/g?b=qq&nk= {{ $qq }} &s=640">
 </body>
 </html>
