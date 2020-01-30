@@ -21,3 +21,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/hello', 'ApiController@hello');
 
 Route::post('/UserAgent', 'ApiController@UserAgent');
+
+Route::post('/Aphorism','ApiController@Aphorism');
+
