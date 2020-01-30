@@ -11,7 +11,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
-public function index(Request $request) {
-    return response()->view('web_qq');
+public function index() {
+    $qq->1084301506;
+    return response()->view('web_qq',[
+        '1084301506' => $qq
+    ]);
 }
 ?>
