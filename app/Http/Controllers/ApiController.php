@@ -41,7 +41,7 @@ namespace App\Http\Controllers;
             "desc"=> "success",
 
             "data"=> [
-        "result"=> $_request->a+$_request->b
+        "result"=> $request->a+$request->b
          ]
 
 
