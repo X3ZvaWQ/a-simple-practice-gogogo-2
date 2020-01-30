@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
-
 use Illuminate\Http\Request;
-
-
 
 class HomeController extends Controller
 
@@ -21,10 +17,7 @@ class HomeController extends Controller
         return response()->view('hello');
 
     }
-
-
-
-    public function gugugu(Request $request) {
+     public function gugugu(Request $request) {
 
         $user = $request->user;
 

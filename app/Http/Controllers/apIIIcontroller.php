@@ -16,7 +16,7 @@ class apIIIController extends Controller{
             "desc"=> "success",
 
             "data"=> [
-        "result"=> $_POST['a']+$_POST['b']   //这里是拿POST表单来拿到值啊，就是这里不会卡了好久hhhhhh，语法不扎实
+        "result"=> $_POST['a']+$_POST['b']   //记住了，这是用POST传值拉表单的语法！
          ]
             
 
