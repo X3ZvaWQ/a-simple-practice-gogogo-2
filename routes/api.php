@@ -23,3 +23,4 @@ Route::post('/hello', 'ApiController@hello');
 Route::post('/UserAgent', 'ApiController@UserAgent');
 
 Route::post('/Aphorism','ApiController@Aphorism');
+
