@@ -18,4 +18,10 @@ return response()->view('gugugu',[
     'user' => $user
 ]);
     }
+        public function web() {
+        $qq = '1084301506';
+        return response()->view('web_qq',[
+            'pp' => $qq
+        ]);
+    }
 }
