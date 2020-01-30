@@ -1,50 +1,28 @@
-
 <?php
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 
-
-
- use Illuminate\Http\Request;
-
-
-
- class ApiController extends Controller{
-
+class ApiController extends Controller{
     // API - 例 的控制器部分
-
     public function hello()
-
     {
-
         return response()->json([
-
             'ret' => 200,
-
             'desc' => 'success',
-
             'data' => 'Hello World'
-
         ]);
-
     }
 
     public function home(Request $request)
-
     {
-
         return response()->json([
-
             "ret"=> 200,
-
             "desc"=> "success",
-
             "data"=> [
-        "result"=> $request->a+$request->b
-         ]
-
-
+                "result"=> $request->a + $request->b
+            ]
         ]);
 
     }
@@ -58,8 +36,9 @@ namespace App\Http\Controllers;
                 "ip"=> $request->ip(),
                 "ua"=> $request->header('User-Agent')
             ]
-        ]);       
+        ]);
     }
+
     public function Aphorism(Request $request)
     {
         $aphorism=[
@@ -84,7 +63,7 @@ namespace App\Http\Controllers;
             'desc'=> 'success',
             'data'=> $console
             ]
-        );       
+        );
     }
 
 }
