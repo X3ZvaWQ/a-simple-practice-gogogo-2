@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 //web - 例 的路由部分
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'Controller@index');
 Route::get('/gugugu/{user}','HomeController@gugugu');
+?>
