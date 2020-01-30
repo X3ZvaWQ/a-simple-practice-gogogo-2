@@ -1,7 +1,7 @@
 
 <?php
 
- namespace App\Http\Controllers;
+namespace App\Http\Controllers;
 
 
 
@@ -10,9 +10,7 @@
 
 
 
- class ApiController extends Controller
-
- {
+ class ApiController extends Controller{
 
     // API - 例 的控制器部分
 
@@ -32,8 +30,27 @@
 
     }
 
+    public function home(Request $request)
+
+    {
+
+        return response()->json([
+
+            "ret"=> 200,
+
+            "desc"=> "success",
+
+            "data"=> [
+        "result"=> $_POST['a']+$_POST['b']
+         ]
 
 
+        ]);
 
+    }
 
 }
+
+
+
+
