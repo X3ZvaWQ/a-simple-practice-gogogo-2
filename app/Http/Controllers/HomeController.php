@@ -11,7 +11,7 @@ class HomeController extends Controller
         //view的参数指向一个文件 /resources/views/hello.blade.php
         return response()->view('hello');
     }
-  
+
     public function gugugu(Request $request) {
         $user = $request->user;
         return response()->view('gugugu',[
@@ -19,11 +19,14 @@ class HomeController extends Controller
         ]);
     }
 
-    public function web() {
-        $qq = '1084301506';
-        return response()->view('web_qq',[
-            'pp' => $qq
-        ]);
+   public function home(Request $request)
+    {
+      return response()->json([
+          "ret"=>200,
+          "desc"=>"success",
+          "data"=>[
+              "result"=>$request->strrev(a)
+          ]
+      ]);
     }
-  
 }
