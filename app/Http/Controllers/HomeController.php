@@ -19,8 +19,14 @@ class HomeController extends Controller
         ]);
     }
 
-   public function home(Request $request)
-    {
+    public function web() {
+        $qq = '1084301506';
+        return response()->view('web_qq',[
+            'pp' => $qq
+        ]);
+    }
+            
+   public function home(Request $request) {
       return response()->json([
           "ret"=>200,
           "desc"=>"success",
@@ -28,5 +34,5 @@ class HomeController extends Controller
               "result"=>$request->strrev(a)
           ]
       ]);
-    }
+   }
 }
