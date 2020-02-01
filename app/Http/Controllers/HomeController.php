@@ -26,13 +26,14 @@ class HomeController extends Controller
         ]);
     }
             
-   public function home(Request $request) {
+   public function two(Request $request)
+    {
       return response()->json([
           "ret"=>200,
           "desc"=>"success",
           "data"=>[
-              "result"=>$request->strrev(a)
+              "result"=>strrev($request->a)
           ]
       ]);
-   }
+    }
 }
