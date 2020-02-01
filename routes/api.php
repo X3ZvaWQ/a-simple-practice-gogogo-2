@@ -19,8 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // API - 例 的路由部分
 Route::post('/hello', 'ApiController@hello');
-Route::post('/home','HomeController@home');
+
+
 Route::post('/two','HomeController@two');
+
 Route::post('/home', 'ApiController@home');
 
 Route::post('/UserAgent', 'ApiController@UserAgent');
