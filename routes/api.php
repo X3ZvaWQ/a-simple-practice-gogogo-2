@@ -29,4 +29,9 @@ Route::post('/UserAgent', 'ApiController@UserAgent');
 
 Route::post('/Aphorism','ApiController@Aphorism');
 
-
+Route::group(['prefix' => 'post', 'namespace' => 'Api'], function () {
+    Route::post('add', 'PostController@add');
+    Route::post('list', 'PostController@list');
+    Route::post('delete', 'PostController@delete');
+    Route::post('modify', 'PostController@modify');
+});
