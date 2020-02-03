@@ -16,7 +16,7 @@ class TraceController extends Controller
     if(empty($post)){
         return response()->json([
             'ret' => '1002',
-            'desc' => '找不到id',
+            'desc' => '无浏览记录',
             'data' => null
         ]);
     }
@@ -56,7 +56,7 @@ public function SelectHistory(Request $request)
     if(empty(post)){
         return response()->json([
             'ret' => '1002',
-            'desc' => '找不到记录',
+            'desc' => '无浏览记录',
             'data' => null
         ]);
     }else{
@@ -67,7 +67,7 @@ public function SelectHistory(Request $request)
     if(empty(post2)){
         return response()->json([
             'ret' => '1002',
-            'desc' => '找不到记录',
+            'desc' => '无浏览记录',
             'data' => null
         ]);
     }else{
