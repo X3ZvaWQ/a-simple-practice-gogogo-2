@@ -41,16 +41,6 @@ class ApiController extends Controller{
         ]);
     }
 
-   
-
-    public function findip(Request $request)
-    {
-        return response()->json([
-            DB::select("select * from laravel_practice")
-        ]);
-    }
-
-
     public function list(Request $request)
     {
     return response()->json([

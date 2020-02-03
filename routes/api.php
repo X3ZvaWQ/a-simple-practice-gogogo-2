@@ -34,7 +34,11 @@ Route::group(['prefix' => 'post', 'namespace' => 'Api'], function () {
     Route::post('list', 'PostController@list');
     Route::post('delete', 'PostController@delete');
     Route::post('modify', 'PostController@modify');
-    Route::post('User_Agent','PostController@User_Agent');
-    Route::post('/findip','ApiController@findip');
-    Route::post('SelectHistory','PostController@SelectHistory');
+});
+
+Route::group(['prefix' => 'trace', 'namespace' => 'Api'], function () {
+    Route::trace('User_Agent','TraceController@User_Agent');
+    Route::post('findip','TraceController@findip');
+    Route::post('SelectHistory','TraceController@SelectHistory');
+    Route::post('delete', 'TraceController@delete');
 });
