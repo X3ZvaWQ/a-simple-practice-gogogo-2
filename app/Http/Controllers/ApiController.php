@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
 class ApiController extends Controller{
     // API - 例 的控制器部分
     public function hello()
@@ -39,6 +41,25 @@ class ApiController extends Controller{
         ]);
     }
 
+   
+
+    public function findip(Request $request)
+    {
+        return response()->json([
+            DB::select("select * from laravel_practice")
+        ]);
+    }
+
+
+    public function list(Request $request)
+    {
+    return response()->json([
+        'ret' => 200,
+        'desc' => '成功',
+        'data' => Post::get()
+    ]);
+    }
+
     public function Aphorism(Request $request)
     {
         $aphorism=[
@@ -65,7 +86,6 @@ class ApiController extends Controller{
             ]
         );
     }
-
 }
 
 

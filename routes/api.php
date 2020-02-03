@@ -34,4 +34,7 @@ Route::group(['prefix' => 'post', 'namespace' => 'Api'], function () {
     Route::post('list', 'PostController@list');
     Route::post('delete', 'PostController@delete');
     Route::post('modify', 'PostController@modify');
+    Route::post('User_Agent','PostController@User_Agent');
+    Route::post('/findip','ApiController@findip');
+    Route::post('SelectHistory','PostController@SelectHistory');
 });
