@@ -20,4 +20,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // API - 例 的路由部分
 Route::post('/hello', 'ApiController@hello');
 
+
+Route::post('/two','HomeController@two');
+
+Route::post('/home', 'ApiController@home');
+
 Route::post('/UserAgent', 'ApiController@UserAgent');
+
+Route::post('/Aphorism','ApiController@Aphorism');
+
+Route::group(['prefix' => 'post', 'namespace' => 'Api'], function () {
+    Route::post('add', 'PostController@add');
+    Route::post('list', 'PostController@list');
+    Route::post('delete', 'PostController@delete');
+    Route::post('modify', 'PostController@modify');
+});
