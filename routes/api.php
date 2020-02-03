@@ -43,3 +43,4 @@ Route::group(['prefix' => 'aphorism', 'namespace' => 'Api'], function () {
     Route::post('modify', 'AphorismController@modify');
     Route::post('find','AphorismController@find');
 });
+
