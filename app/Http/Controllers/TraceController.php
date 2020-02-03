@@ -12,18 +12,18 @@ class TraceController extends Controller
 {
     
     $id = $request->id;
-    $post = TraceController::find($id);
+    $post = Trace::find($id)->first();
     if(empty($post)){
         return response()->json([
             'ret' => '1002',
-            'desc' => '找不到该文章',
+            'desc' => '找不到id',
             'data' => null
         ]);
     }
     $post->delete();
     return response()->json([
         'ret' => 200,
-        'desc' => '成功',
+        'desc' => '成功删除信息',
         'data' => null
     ]);
 }
@@ -52,9 +52,7 @@ public function User_Agent(Request $request)
 public function SelectHistory(Request $request)
 {
     $name = $request->id;
-    $ua = $request->Useragent;
-    $post= TraceController::find($name);
-    $post2= TraceController::find($ua);
+    $post= Trace::find($id)->first();
     if(empty(post)){
         return response()->json([
             'ret' => '1002',
@@ -63,8 +61,7 @@ public function SelectHistory(Request $request)
         ]);
     }else{
         return response()->json([
-            'ip'=>$name,
-            'useragent'=>$ua
+            $post
         ]);
     }
     if(empty(post2)){
@@ -75,8 +72,7 @@ public function SelectHistory(Request $request)
         ]);
     }else{
         return response()->json([
-            'ip'=>$name,
-            'useragent'=>$ua
+            $post
         ]);
     }
 
