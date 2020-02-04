@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Web_picture;
 
 class HomeController extends Controller
 {
@@ -18,14 +19,47 @@ class HomeController extends Controller
             'user' => $user
         ]);
     }
-
+  
     public function web() {
         $qq = '1084301506';
         return response()->view('web_qq',[
             'pp' => $qq
+            ]);
+    }
+    public function add(){
+        return view('web_picture_add');
+    }
+    public function store(Request $request){
+        $input = $request -> except('_token');
+        $href = Web_picture::create($input);
+        if($href){
+            return redirect('web_picture/index');
+        }
+        else{
+            return back();
+        }
+    }
+    public function WebIndex(){
+        $href = Web_picture::get();
+        return view('web_picture_index',[
+            'href'=> $href
         ]);
     }
-            
+
+    public function edit(){
+        return view('web_picture_edit');
+    }
+    public function update(Request $request){
+        $input = $request->id;
+        $id = Web_picture::where('id',$input);
+        $id->delete();
+        if($id){
+            return redirect('web_picture/index');
+        }
+        else{
+            return back();
+        }
+ 
    public function two(Request $request)
     {
       return response()->json([
