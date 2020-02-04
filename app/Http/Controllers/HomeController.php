@@ -29,6 +29,24 @@ class HomeController extends Controller
 
     }
 
+    public function home(Request $request)
 
+    {
+
+
+        return response()->json([
+
+            "ret"=> 200,
+
+            "desc"=> "success",
+
+            "data"=> [
+        "result"=> $request->b+$request->a
+         ]
+
+
+        ]);
+
+    }
 
 }

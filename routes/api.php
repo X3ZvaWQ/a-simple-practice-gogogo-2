@@ -20,5 +20,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // API - 例 的路由部分
 Route::post('/hello', 'ApiController@hello');
 
-Route::post('/home', 'ApiController@home');
+Route::post('/home', 'HomeController@home');
 
+Route::group(['prefix' => 'post', 'namespace' => 'Api'], function () {
+    Route::post('add', 'PostController@add');//增
+    Route::post('list', 'PostController@list');//查
+    Route::post('delete', 'PostController@delete');//删
+    Route::post('modify', 'PostController@modify');//改
+    Route::post('connect','PostController@connect');//合并
+});
