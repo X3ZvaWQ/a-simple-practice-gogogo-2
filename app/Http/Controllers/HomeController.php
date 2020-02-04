@@ -19,16 +19,17 @@ class HomeController extends Controller
             'user' => $user
         ]);
     }
-  
+
     public function web() {
         $qq = '1084301506';
         return response()->view('web_qq',[
             'pp' => $qq
-            ]);
+        ]);
     }
     public function add(){
         return view('web_picture_add');
     }
+
     public function store(Request $request){
         $input = $request -> except('_token');
         $href = Web_picture::create($input);
@@ -59,7 +60,8 @@ class HomeController extends Controller
         else{
             return back();
         }
- 
+    }
+
    public function two(Request $request)
     {
       return response()->json([

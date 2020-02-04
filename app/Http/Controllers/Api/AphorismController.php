@@ -39,7 +39,7 @@ class AphorismController extends Controller
         return response()->json([
             'ret' => 200,
             'desc' => '成功',
-            'data' => Post::get()
+            'data' => Aphorism::get()
         ]);
     }
 
