@@ -31,9 +31,9 @@ class TraceController extends Controller
 
 public function User_Agent(Request $request)
 {
-    $myip = $request->ip();
-    $myua = $request->header("User-Agent");
-    if(empty($myip) || empty($myua)) {
+    $id = $request->ip();
+    $ua = $request->header("User-Agent");
+    if(empty($id) || empty($ua)) {
         return response()->json([
             'ret' => '1001',
             'desc' => '缺少参数',
@@ -41,8 +41,8 @@ public function User_Agent(Request $request)
         ]);
     }
     $trace = new TraceController;
-    $trace->myip = $myip;
-    $trace->myua = $myua;
+    $trace->id = $id;
+    $trace->ua = $ua;
     $trace->save();
     return response()->json([
         "ip"=> $request->ip(),
@@ -53,7 +53,9 @@ public function User_Agent(Request $request)
 public function SelectHistory(Request $request)
 {
     $name = $request->id;
+    $ua = $request->ua;
     $trace= Trace::find($id)->first();
+    $trace2= Trace::find($ua)->first();
     if(empty(trace)){
         return response()->json([
             'ret' => '1002',

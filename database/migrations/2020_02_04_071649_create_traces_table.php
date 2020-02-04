@@ -15,8 +15,7 @@ class CreateTracesTable extends Migration
     {
         Schema::create('traces', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->string('content');
+            $table->string('ua');
             $table->timestamps();
         });
     }
