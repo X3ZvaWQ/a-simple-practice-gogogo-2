@@ -12,15 +12,15 @@ class TraceController extends Controller
 {
     
     $id = $request->id;
-    $post = Trace::find($id)->first();
-    if(empty($post)){
+    $trace = Trace::find($id)->first();
+    if(empty($trace)){
         return response()->json([
             'ret' => '1002',
             'desc' => '无浏览记录',
             'data' => null
         ]);
     }else{
-    $post->delete();
+    $trace->delete();
     return response()->json([
         'ret' => 200,
         'desc' => '成功删除信息',
@@ -40,10 +40,10 @@ public function User_Agent(Request $request)
             'data' => null
         ]);
     }
-    $post = new TraceController;
-    $post->myip = $myip;
-    $post->myua = $myua;
-    $post->save();
+    $trace = new TraceController;
+    $trace->myip = $myip;
+    $trace->myua = $myua;
+    $trace->save();
     return response()->json([
         "ip"=> $request->ip(),
         "ua"=> $request->header('User-Agent')
@@ -53,8 +53,8 @@ public function User_Agent(Request $request)
 public function SelectHistory(Request $request)
 {
     $name = $request->id;
-    $post= Trace::find($id)->first();
-    if(empty(post)){
+    $trace= Trace::find($id)->first();
+    if(empty(trace)){
         return response()->json([
             'ret' => '1002',
             'desc' => '无浏览记录',
@@ -62,10 +62,10 @@ public function SelectHistory(Request $request)
         ]);
     }else{
         return response()->json([
-            $post
+            $trace
         ]);
     }
-    if(empty(post2)){
+    if(empty(trace2)){
         return response()->json([
             'ret' => '1002',
             'desc' => '无浏览记录',
@@ -73,7 +73,7 @@ public function SelectHistory(Request $request)
         ]);
     }else{
         return response()->json([
-            $post
+            $trace
         ]);
     }
 

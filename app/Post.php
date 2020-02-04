@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\Controller;
 use App\Post;
 
-class Post1 extends Model
+class Post extends Model
 {
     
 
