@@ -17,8 +17,9 @@ class HomeController extends Controller
         $user = $request->user;
         return response()->view('gugugu',[
             'user' => $user
-            ]);
+        ]);
     }
+  
     public function web() {
         $qq = '1084301506';
         return response()->view('web_qq',[
@@ -44,6 +45,7 @@ class HomeController extends Controller
             'href'=> $href
         ]);
     }
+
     public function edit(){
         return view('web_picture_edit');
     }
@@ -57,5 +59,15 @@ class HomeController extends Controller
         else{
             return back();
         }
+ 
+   public function two(Request $request)
+    {
+      return response()->json([
+          "ret"=>200,
+          "desc"=>"success",
+          "data"=>[
+              "result"=>strrev($request->a)
+          ]
+      ]);
     }
 }
