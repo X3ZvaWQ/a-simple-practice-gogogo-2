@@ -52,7 +52,7 @@ public function User_Agent(Request $request)
 
 public function SelectHistory(Request $request)
 {
-    $name = $request->id;
+    $id = $request->id;
     $ua = $request->ua;
     $trace= Trace::find($id)->first();
     $trace2= Trace::find($ua)->first();
