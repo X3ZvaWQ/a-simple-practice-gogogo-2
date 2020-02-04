@@ -18,6 +18,7 @@ Route::get('/', function () {
 //web - 例 的路由部分
 Route::get('/home', 'HomeController@index');
 Route::get('/gugugu/{user}','HomeController@gugugu');
+
 Route::get('/web','HomeController@web');
 
 Route::get('/web_picture/add','HomeController@add');
