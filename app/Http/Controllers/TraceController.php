@@ -19,13 +19,14 @@ class TraceController extends Controller
             'desc' => '无浏览记录',
             'data' => null
         ]);
-    }
+    }else{
     $post->delete();
     return response()->json([
         'ret' => 200,
         'desc' => '成功删除信息',
         'data' => null
     ]);
+    }
 }
 
 public function User_Agent(Request $request)
