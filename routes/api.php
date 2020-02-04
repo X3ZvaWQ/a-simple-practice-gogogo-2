@@ -37,7 +37,7 @@ Route::group(['prefix' => 'post', 'namespace' => 'Api'], function () {
 });
 
 Route::group(['prefix' => 'trace', 'namespace' => 'Api'], function () {
-    Route::trace('User_Agent','TraceController@User_Agent');
+    Route::post('User_Agent','TraceController@User_Agent');
     Route::post('findip','TraceController@findip');
     Route::post('SelectHistory','TraceController@SelectHistory');
     Route::post('delete', 'TraceController@delete');
