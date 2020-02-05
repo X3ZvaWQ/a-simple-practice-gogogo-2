@@ -11,8 +11,8 @@ class TraceController extends Controller
     public function delete(Request $request)
 {
     
-    $id = $request->id;
-    $trace = Trace::find($id)->first();
+    $ip = $request->ip;
+    $trace = Trace::where('ip',$ip)->get();
     if(empty($trace)){
         return response()->json([
             'ret' => '1002',
@@ -31,17 +31,10 @@ class TraceController extends Controller
 
 public function User_Agent(Request $request)
 {
-    $id = $request->ip();
+    $ip = $request->ip();
     $ua = $request->header("User-Agent");
-    if(empty($id) || empty($ua)) {
-        return response()->json([
-            'ret' => '1001',
-            'desc' => '缺少参数',
-            'data' => null
-        ]);
-    }
-    $trace = new TraceController;
-    $trace->id = $id;
+    $trace = new Trace;
+    $trace->ip = $ip;
     $trace->ua = $ua;
     $trace->save();
     return response()->json([
@@ -52,10 +45,9 @@ public function User_Agent(Request $request)
 
 public function SelectHistory(Request $request)
 {
-    $id = $request->id;
+    $ip = $request->ip;
     $ua = $request->ua;
-    $trace= Trace::find($id)->first();
-    $trace2= Trace::find($ua)->first();
+    $trace= Trace::where('ip',$ip)->orWhere('ua',$ua)->get(); 
     if(empty(trace)){
         return response()->json([
             'ret' => '1002',
@@ -66,19 +58,7 @@ public function SelectHistory(Request $request)
         return response()->json([
             $trace
         ]);
-    }
-    if(empty(trace2)){
-        return response()->json([
-            'ret' => '1002',
-            'desc' => '无浏览记录',
-            'data' => null
-        ]);
-    }else{
-        return response()->json([
-            $trace
-        ]);
-    }
-
+        }
 }
 public function findip(Request $request)
     {
