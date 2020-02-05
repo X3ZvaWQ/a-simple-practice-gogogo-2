@@ -38,8 +38,9 @@ Route::group(['prefix' => 'post', 'namespace' => 'Api'], function () {
 
 Route::group(['prefix' => 'aphorism', 'namespace' => 'Api'], function () {
     Route::post('add', 'AphorismController@add');
-    Route::post('list', 'AphorismControllerr@list');
+    Route::post('list', 'AphorismController@list');
     Route::post('delete', 'AphorismController@delete');
     Route::post('modify', 'AphorismController@modify');
     Route::post('find','AphorismController@find');
 });
+
