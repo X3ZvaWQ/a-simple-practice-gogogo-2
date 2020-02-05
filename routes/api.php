@@ -44,3 +44,10 @@ Route::group(['prefix' => 'aphorism', 'namespace' => 'Api'], function () {
     Route::post('find','AphorismController@find');
 });
 
+Route::group(['prefix' => 'value', 'namespace' => 'Api'], function () {
+    Route::post('add', 'ValueController@add');//存储
+    Route::post('read', 'ValueController@read');//读取
+    Route::post('delete', 'ValueController@delete');
+    Route::post('modify', 'ValueController@modify');//修改
+    Route::post('connect','ValueController@connect');//合并
+});
