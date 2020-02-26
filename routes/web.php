@@ -30,3 +30,11 @@ Route::get('/web_picture/edit','HomeController@edit');
 Route::post('/web_picture/update','HomeController@update');
 
 Route::get('/web_picture/index','HomeController@WebIndex');
+
+Route::get('/input/add','inputController@add');
+
+Route::post('/input/store','inputController@show');
+
+Route::get('/input/index','inputController@index');
+
+Route::get('/input/{id}','inputController@dele');
